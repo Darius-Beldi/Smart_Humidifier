@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "author": "Anonymous",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-pi-pico-w",
+      "id": "pico",
+      "top": 0,
+      "left": 0,
+      "attrs": {}   
+    },
+    {
+        "type": "part",
+        "id": "led",
+        "top": 100,
+        "left": 100,
+        "attrs": {
+            "type": "led",
+            "color": "#ff0000"
+        }
+    }
+  ],
+  "connections": []
+}

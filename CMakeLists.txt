@@ -44,18 +44,25 @@ pico_set_program_version(Smart_Humidifier "0.1")
 pico_enable_stdio_uart(Smart_Humidifier 0)
 pico_enable_stdio_usb(Smart_Humidifier 0)
 
+# add the ST7735 library to the build
+add_subdirectory(lib/pico-st7735/lib-st7735)
+
 # Add the standard library to the build
 target_link_libraries(Smart_Humidifier
-        pico_stdlib)
+        pico_stdlib
+        )
 
 # Add the standard include files to the build
 target_include_directories(Smart_Humidifier PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
+        ${CMAKE_CURRENT_LIST_DIR}/lib/pico-st7735/lib-st7735/include
 )
 
 # Add any user requested libraries
 target_link_libraries(Smart_Humidifier 
-        
+        st7735
+        hardware_spi
+        hardware_gpio
         )
 
 pico_add_extra_outputs(Smart_Humidifier)
